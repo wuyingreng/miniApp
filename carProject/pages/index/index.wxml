@@ -1,6 +1,13 @@
 <!--index.wxml-->
 <scroll-view class="scrollarea" scroll-y type="list">
+  <swiper indicator-dots 	indicator-active-color="#f3514f" indicator-color="#fff" circular autoplay="">
+    <swiper-item>
+    <image   src="../../assets/banner/banner-1.png" mode="aspectFill" show-menu-by-longpress/>
+    </swiper-item>
+    <swiper-item> <image   src="../../assets/banner/banner-2.png" mode="aspectFill" show-menu-by-longpress/></swiper-item>
+    <swiper-item> <image   src="../../assets/banner/banner-3.png" mode="aspectFill" show-menu-by-longpress/></swiper-item>
+  </swiper>
   <view class="container">
-    Weixin999
+  x
   </view>
 </scroll-view>
