@@ -7,137 +7,133 @@ page {
   box-sizing: border-box;
 }
 
-page > view:nth-child(n + 2) {
+page>view:nth-child(n + 2) {
   margin-top: 16rpx;
 }
 
-  .swiper {
-    swiper-item {
-      border-radius: 10rpx;
-      background-color: purple;
-
-      image {
-        width: 100%;
-        height: 100%;
-      }
-
-      // &:first-child{
-      //   background-color: skyblue;
-      // }
-      // &:nth-child(2){
-      //   background-color: green;
-      // }
-      // &:nth-child(3){
-      //   background-color: rebeccapurple;
-      // }
-      // &:last-child{
-      //   background-color: purple;
-      // }
-    }
-  }
-
-  .info {
-    display: flex;
-    justify-content: space-between;
-    margin: 16rpx 0rpx;
-    padding: 20rpx;
-    background-color: #fff;
+.swiper {
+  swiper-item {
     border-radius: 10rpx;
-  }
+    background-color: purple;
 
-  .navs {
-    display: flex;
-    justify-content: space-between;
-
-    >view {
-      navigator {
-        display: flex;
-        flex-direction: column;
-        padding: 20rpx 16rpx;
-      }
-
-      image {
-        width: 80rpx;
-        height: 80rpx;
-      }
-
-      text {
-        font-size: 24rpx;
-        margin-top: 12rpx;
-      }
-    }
-  }
-
-  // 推荐商品区域
-  .good-hot {
-    background-color: #fff;
-    padding: 16rpx;
-    border-radius: 10rpx;
-    font-size: 24rpx;
-
-    .scroll-x {
+    image {
       width: 100%;
-      white-space: nowrap;
+      height: 100%;
+    }
 
-      .good-item {
-        display: inline-flex;
-        flex-direction: column;
-        justify-content: space-between;
-        width: 320rpx;
-        height: 440rpx;
+    // &:first-child{
+    //   background-color: skyblue;
+    // }
+    // &:nth-child(2){
+    //   background-color: green;
+    // }
+    // &:nth-child(3){
+    //   background-color: rebeccapurple;
+    // }
+    // &:last-child{
+    //   background-color: purple;
+    // }
+  }
+}
 
-        text {
-          &:nth-of-type(1) {
-            font-weight: bold;
-          }
-        }
+.info {
+  display: flex;
+  justify-content: space-between;
+  margin: 16rpx 0rpx;
+  padding: 20rpx;
+  background-color: #fff;
+  border-radius: 10rpx;
+}
 
-        image {
-          width: 100%;
-          height: 320rpx;
-        }
+.navs {
+  display: flex;
+  justify-content: space-between;
 
-        &:last-child {
-          margin-right: 0;
-        }
-      }
+  >view {
+    navigator {
+      display: flex;
+      flex-direction: column;
+      padding: 20rpx 16rpx;
+    }
 
-      // view {
-      //   display: inline-block;
-      //   width: 320rpx;
-      //   height: 440rpx;
-      //   margin-right: 16rpx;
+    image {
+      width: 80rpx;
+      height: 80rpx;
+    }
 
-      //   .good-item {
-      //     display: flex;
-      //     flex-direction: column;
-      //     justify-content: space-between;
-
-      //     text {
-      //       &:nth-of-type(1) {
-      //         font-weight: bold;
-      //       }
-      //     }
-      //   }
-
-      //   image {
-      //     width: 100%;
-      //     height: 320rpx;
-      //   }
-
-      //   &:last-child {
-      //     margin-right: 0;
-      //   }
-      // }
+    text {
+      font-size: 24rpx;
+      margin-top: 12rpx;
     }
   }
 }
+
+// 推荐商品区域
+.good-hot {
+  background-color: #fff;
+  padding: 16rpx;
+  border-radius: 10rpx;
+  font-size: 24rpx;
+
+  .scroll-x {
+    width: 100%;
+    white-space: nowrap;
+
+    .good-item {
+      display: inline-flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 320rpx;
+      height: 440rpx;
+
+      text {
+        &:nth-of-type(1) {
+          font-weight: bold;
+        }
+      }
+
+      image {
+        width: 100%;
+        height: 320rpx;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    // view {
+    //   display: inline-block;
+    //   width: 320rpx;
+    //   height: 440rpx;
+    //   margin-right: 16rpx;
+
+    //   .good-item {
+    //     display: flex;
+    //     flex-direction: column;
+    //     justify-content: space-between;
+
+    //     text {
+    //       &:nth-of-type(1) {
+    //         font-weight: bold;
+    //       }
+    //     }
+    //   }
+
+    //   image {
+    //     width: 100%;
+    //     height: 320rpx;
+    //   }
+
+    //   &:last-child {
+    //     margin-right: 0;
+    //   }
+    // }
+  }
+}
+
 
 .scrollarea {
   flex: 1;
   overflow-y: hidden;
-}
-
-view {
-  color: red
 }

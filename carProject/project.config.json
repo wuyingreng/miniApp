@@ -21,7 +21,9 @@
     "condition": false,
     "swc": false,
     "disableSWC": true,
-    "useCompilerPlugins":["sass"]
+    "useCompilerPlugins": [
+      "sass"
+    ]
   },
   "compileType": "miniprogram",
   "simulatorPluginLibVersion": {},

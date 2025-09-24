@@ -9,22 +9,21 @@
   ],
   "window": {
     "navigationBarTitleText": "微信接口功能演示",
-    "navigationBarBackgroundColor":"#f3514f",
+    "navigationBarBackgroundColor": "#f3514f",
     "enablePullDownRefresh": false,
     "backgroundColor": "#efefef",
-    "backgroundTextStyle":"dark"
+    "backgroundTextStyle": "dark"
   },
   "style": "v2",
-  "rendererOptions": {
-  },
+  "rendererOptions": {},
   "tabBar": {
-    "selectedColor":"#f3514f",
+    "selectedColor": "#f3514f",
     "color": "#666",
-    "borderStyle":"black",
+    "borderStyle": "black",
     "position": "bottom",
     "list": [
       {
-        "text":"首页",
+        "text": "首页",
         "pagePath": "pages/index/index",
         "iconPath": "assets/tabbar/index.png",
         "selectedIconPath": "assets/tabbar/index-active.png"
