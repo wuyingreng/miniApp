@@ -5,7 +5,7 @@
     "pages/cate/cate",
     "pages/cart/cart",
     "pages/profile/profile",
-    "pages/list/index"
+    "pages/list/list"
   ],
   "window": {
     "navigationBarTitleText": "微信接口功能演示",

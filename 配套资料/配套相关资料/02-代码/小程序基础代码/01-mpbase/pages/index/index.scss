@@ -9,6 +9,7 @@ page {
   flex-direction: column;
 
   > view {
+    // n从0开始算
     &:nth-child(n + 2) {
       margin-top: 16rpx;
     }

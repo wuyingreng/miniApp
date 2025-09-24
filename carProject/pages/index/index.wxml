@@ -1,13 +1,97 @@
 <!--index.wxml-->
 <scroll-view class="scrollarea" scroll-y type="list">
-  <swiper indicator-dots 	indicator-active-color="#f3514f" indicator-color="#fff" circular autoplay="">
+  <swiper class="swiper" indicator-dots indicator-active-color="#f3514f" indicator-color="#fff" circular autoplay="">
     <swiper-item>
-    <image   src="../../assets/banner/banner-1.png" mode="aspectFill" show-menu-by-longpress/>
+      <image src="../../assets/banner/banner-1.png" mode="aspectFill" show-menu-by-longpress />
     </swiper-item>
-    <swiper-item> <image   src="../../assets/banner/banner-2.png" mode="aspectFill" show-menu-by-longpress/></swiper-item>
-    <swiper-item> <image   src="../../assets/banner/banner-3.png" mode="aspectFill" show-menu-by-longpress/></swiper-item>
+    <swiper-item>
+      <image src="../../assets/banner/banner-2.png" mode="aspectFill" show-menu-by-longpress />
+    </swiper-item>
+    <swiper-item>
+      <image src="../../assets/banner/banner-3.png" mode="aspectFill" show-menu-by-longpress />
+    </swiper-item>
   </swiper>
-  <view class="container">
-  x
+
+  <view class="info">
+    <text user-select space="ensp">同城配送</text>
+    <text user-select space="ensp">行业龙头</text>
+    <text user-select space="ensp">半小时送达</text>
+    <text user-select space="ensp">同城配送</text>
+  </view>
+
+  <view class="navs">
+    <view>
+      <navigator url="/pages/list/list">
+        <image src="../../assets/category/cate-2.png" />
+        <text>爱礼精选</text>
+      </navigator>
+    </view>
+    <view>
+      <navigator url="/pages/list/list">
+        <image src="../../assets/category/cate-2.png" alt="" />
+        <text>鲜花玫瑰</text>
+      </navigator>
+    </view>
+    <view>
+      <navigator url="/pages/list/list">
+        <image src="../../assets/category/cate-3.png" alt="" />
+        <text>永生玫瑰</text>
+      </navigator>
+    </view>
+    <view>
+      <navigator url="/pages/list/list">
+        <image src="../../assets/category/cate-4.png" alt="" />
+        <text>玫瑰珠宝</text>
+      </navigator>
+    </view>
+    <view>
+      <navigator url="/pages/list/list">
+        <image src="/assets/category/cate-5.png" alt="" />
+        <text>香水护体</text>
+      </navigator>
+    </view>
+  </view>
+
+  <view class="good-hot">
+    <scroll-view scroll-x class="scroll-x">
+
+        <view class="good-item">
+          <image src="../../assets/floor/1.png" mode="" />
+          <text>鲜花玫瑰</text>
+          <text>66</text>
+        </view>
+
+
+
+        <view class="good-item">
+          <image src="../../assets/floor/2.png" mode="" />
+          <text>鲜花玫瑰</text>
+          <text>77</text>
+        </view>
+
+
+
+        <view class="good-item">
+          <image src="../../assets/floor/3.png" mode="" />
+          <text>鲜花玫瑰</text>
+          <text>88</text>
+        </view>
+
+
+        <view class="good-item">
+          <image src="../../assets/floor/4.png" mode="" />
+          <text>鲜花玫瑰</text>
+          <text>99</text>
+        </view>
+
+
+
+        <view class="good-item">
+          <image src="../../assets/floor/5.png" mode="" />
+          <text>鲜花玫瑰</text>
+          <text>100</text>
+        </view>
+
+    </scroll-view>
   </view>
 </scroll-view>
