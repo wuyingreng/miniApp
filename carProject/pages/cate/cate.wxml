@@ -1,2 +1,17 @@
 <!--pages/cate/cate.wxml-->
-<text>pages/cate/cate.wxml 99999</text>
+<view>
+  <text>{{userInfo.name}}</text>
+  <text>{{userInfo.age}}</text>
+  <text>{{userInfo.gender}}</text>
+  <text>{{userInfo.school}}</text>
+  <button type="warn" bindtap="changeObj">修改对象属性</button>
+
+
+  <view class="line"></view>
+
+  <!-- <view wx:for="{{ list }}" wx:key="index">{{ item }}</view> -->
+  <view wx:for="{{list}}" wx:key="index">{{ item }}</view>
+  <!-- <view>{{ list[0].name }}</view> -->
+
+  <button type="primary" bindtap="updateList">修改数组类型数据</button>
+</view>

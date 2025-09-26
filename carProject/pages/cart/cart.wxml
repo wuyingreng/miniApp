@@ -1,4 +1,7 @@
 <!--pages/cart/cart.wxml-->
 <view class="container">
-    99999
+  <input model:value="{{ value }}" />
+  <checkbox model:checked="{{isChecked}}" />
+
+  <input type="text" model:value="{{ obj.value }}" />
 </view>

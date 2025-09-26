@@ -1,0 +1,14 @@
+<!--pages/market/market.wxml-->
+<view>
+  <text>{{num}}</text>
+
+  <text wx:if="{{num===1}}">num===1,当前num={{num}}</text>
+  <text wx:elif="{{num>1}}">num>1,当前num={{num}}</text>
+
+
+
+  <text hidden="{{num<=1}}">wx:hidden的用法</text>
+  <button type="warn" bindtap="updateNum">点击更新num</button>
+
+
+</view>

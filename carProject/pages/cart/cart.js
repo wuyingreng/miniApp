@@ -5,7 +5,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    value: 11,
+    isChecked: true,
+    obj: {
+      value: 22
+    }
   },
 
   /**

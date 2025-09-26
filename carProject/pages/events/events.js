@@ -1,20 +1,10 @@
-// pages/profile/profile.js
+// pages/events/events.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    numList: [1, 2, 3, 4],
-    fruitList: [
-      { id: 1, name: '🍎', price: 66 },
-      { id: 2, name: '🍋', price: 77 },
-      { id: 3, name: '🍅', price: 88 }
-    ],
-    obj: {
-      name: 'Emily',
-      age: 20
-    }
 
   },
 
@@ -72,6 +62,16 @@ Page({
    */
   onShareAppMessage() {
 
+  },
+  // 事件处理程序
+  // handler1(event) {
+  //   console.log('我是btn1绑定的事件 ~~~ 会冒泡到父', 'event==>', event)
+  // },
+  handler2(event) {
+    console.log('我是btn2绑定的事件 ~~~ 不冒泡到父')
+  },
+
+  parentHandler(event) {
+    console.log('我是父绑定的事件 ~~~', 'event==>', event)
   }
 })
-

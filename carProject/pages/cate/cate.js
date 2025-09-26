@@ -5,7 +5,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    userInfo: {
+      name: 'Tom',
+      age: 10,
+      gender: '男'
+    },
+    list: [1, 2, 3, 4]
   },
 
   /**
@@ -62,5 +67,21 @@ Page({
    */
   onShareAppMessage() {
 
+  },
+  changeObj() {
+    // 新增
+    // const newObj = { ...this.data.userInfo, school: '贵溪一种' }
+    // console.log('changeObj==>', newObj)
+    // this.setData({ userInfo: newObj })
+
+    // 删除
+    const { name, ...rest
+    } = this.data.userInfo
+    this.setData({ userInfo: rest })
+
+  },
+  updateList() {
+    this.data.list.push(1)
+    this.setData({ list: this.data.list })
   }
 })

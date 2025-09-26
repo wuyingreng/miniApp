@@ -1,21 +1,11 @@
-// pages/profile/profile.js
+// pages/market/market.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    numList: [1, 2, 3, 4],
-    fruitList: [
-      { id: 1, name: '🍎', price: 66 },
-      { id: 2, name: '🍋', price: 77 },
-      { id: 3, name: '🍅', price: 88 }
-    ],
-    obj: {
-      name: 'Emily',
-      age: 20
-    }
-
+    num: 1
   },
 
   /**
@@ -72,6 +62,11 @@ Page({
    */
   onShareAppMessage() {
 
+  },
+  updateNum() {
+    this.data.num += 1
+    this.setData({
+      num: this.data.num
+    })
   }
 })
-

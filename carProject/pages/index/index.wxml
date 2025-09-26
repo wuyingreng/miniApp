@@ -33,9 +33,9 @@
 
   <view class="navs">
     <view>
-      <navigator url="/pages/list/list">
+      <navigator url="/pages/list/list" redirect>
         <image src="../../assets/category/cate-2.png" />
-        <text>爱礼精选</text>
+        <text>进入list页面</text>
       </navigator>
     </view>
     <view>
@@ -68,9 +68,12 @@
     <scroll-view scroll-x class="scroll-x">
 
       <view class="good-item">
-        <image src="../../assets/floor/1.png" mode="" />
-        <text>鲜花玫瑰</text>
-        <text>66</text>
+        <!-- 前面要加/写根路径 -->
+        <navigator url="/pages/market/market">
+          <image src="../../assets/floor/1.png" mode="" />
+          <text>进入market页面</text>
+          <text>66</text>
+        </navigator>
       </view>
 
 
@@ -106,4 +109,39 @@
 
     </scroll-view>
   </view>
+  <view class="bg-image"></view>
+  <!-- wxml语法 -->
+  <text>下面展示wxml语法</text>
+  <!-- 展示内容 -->
+  <view>{{ school }}</view>
+  <view>{{obj.name}}</view>
+  <!-- 绑定属性值，如果需要动态绑定一个变量，属性值也需要使用双大括号进行包裹 
+  这里和vue不一样，vue是i:id="id"
+  -->
+  <view id="{{ id }}">绑定属性值</view>
+  <!-- 如果属性值是布尔值，也需要使用双大括号进行包裹 -->
+  <checkbox checked="{{ isChecked }}" />
+
+  <!-- 算术运算 -->
+  <view>{{ id + 1 }}</view>
+  <view>{{ id - 1 }}</view>
+  <!-- 三元运算 -->
+  <view>{{ id === 1 ? '等于' : '不等于' }}</view>
+  <!-- 逻辑判断 -->
+  <view>{{ id === 1 }}</view>
+  <!-- 在双大括号写法内部，只能写表达式，不能写语句，也不能调用 js 的方法
+    表达式是得到一个值，语句是执行某些操作
+  
+   -->
+  <!-- <view>{{ if (id === 1) {} }}</view> -->
+  <!-- <view>{{ for (const i = 0; i <= 10; i++) {} }}</view> -->
+  <view>{{ obj.name.toUpperCase() }}</view>
+
+  <view class="line"></view>
+  下面进行数据请求
+
+  <button type="warn" bindtap="fetchBanner">请求banner</button>
+
+
+
 </scroll-view>

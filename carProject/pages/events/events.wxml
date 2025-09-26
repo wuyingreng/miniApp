@@ -1,0 +1,20 @@
+<!--pages/events/events.wxml-->
+<view mark:grent-id='101'>
+  <span>测试mark会不会收集根节点的</span>
+  <view bindtap="parentHandler" data-parent-name='徐爱兰' mark:id='99'>
+    <!-- 使用 bind 绑定的事件，会产生事件冒泡 -->
+    <button bindtap="handler1" class="btn1">按钮1</button>
+
+    <!-- 使用 catcht 绑定的事件，会阻止事件冒泡 -->
+    <button catchtap="handler2" class="btn2">按钮2</button>
+
+
+    <!-- 通过data进行事件传参 -->
+    <button bindtap="handler1" class="btn1" data-name='Emily' mark:sonid='99'>通过data进行事件传参</button>
+
+
+
+
+
+  </view>
+</view>

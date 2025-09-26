@@ -5,7 +5,9 @@
     "pages/cate/cate",
     "pages/cart/cart",
     "pages/profile/profile",
-    "pages/list/list"
+    "pages/list/list",
+    "pages/events/events",
+    "pages/market/market"
   ],
   "window": {
     "navigationBarTitleText": "微信接口功能演示",
@@ -43,6 +45,12 @@
       {
         "text": "我的",
         "pagePath": "pages/profile/profile",
+        "iconPath": "/assets/tabbar/profile.png",
+        "selectedIconPath": "/assets/tabbar/profile-active.png"
+      },
+      {
+        "text": "事件",
+        "pagePath": "pages/events/events",
         "iconPath": "/assets/tabbar/profile.png",
         "selectedIconPath": "/assets/tabbar/profile-active.png"
       }

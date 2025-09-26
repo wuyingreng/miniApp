@@ -1,2 +1,14 @@
 <!--pages/profile/profile.wxml-->
-<text>pages/profile/profile.wxml</text>
+<view>
+  <view wx:for="{{fruitList}}" wx:key="id" wx:for-item="fruitItem">
+
+    {{fruitItem.name}}-{{fruitItem.price}}
+  </view>
+
+  <view wx:for="{{obj}}" wx:key="id" wx:for-item="value" wx:for-index="key">
+
+    {{value}}-{{key}}
+  </view>
+
+
+</view>
