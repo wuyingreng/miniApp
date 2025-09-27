@@ -1,6 +1,8 @@
 // components/custom-checkbox/custom-checkbox.js
 Component({
-
+  options: {
+    styleIsolation: 'shared'
+  },
   /**
   * 组件的属性列表：组件的对外属性，主要用来接收组件使用者传递给组件内部的属性以及数据
   */
@@ -38,14 +40,53 @@ Component({
   data: {
     isChecked: false
   },
+  observers: {
+    checked: function (newChecked) {
+      this.setData({
+        isChecked: newChecked
+      })
+    }
+  },
+
+
+
+
   /**
    * 组件的方法列表：在组件中，所有的事件处理程序都需要写到 methods 方法中
    */
   methods: {
-    updateChecked() {
+    /**
+     * this.setData() 确实是异步的，这意味着：
+第59-61行的 this.setData() 调用后，this.data.isChecked 的值不会立即更新
+第62行的 this.triggerEvent() 中获取到的 this.data.isChecked 仍然是旧的值（更新前的值）
+     * 方案1：直接使用计算后的值（推荐）
+     *
+     *  updateChecked() {
+  const newChecked = !this.data.isChecked
+  this.setData({
+    isChecked: newChecked
+  })
+  this.triggerEvent('changechecked', newChecked)
+}
 
+方案2：使用 setData 的回调函数
+updateChecked() {
+  this.setData({
+    isChecked: !this.data.isChecked
+  }, () => {
+    // 在 setData 完成后的回调中触发事件
+    this.triggerEvent('changechecked', this.data.isChecked)
+  })
+}
+     * 
+    */
+    updateChecked() {
+      const newChecked = !this.data.isChecked;
       this.setData({
-        isChecked: !this.data.isChecked
+        isChecked: newChecked
+      }, () => {
+        // 在 setData 完成后的回调中触发事件
+        this.triggerEvent('changechecked', this.data.isChecked)
       })
 
     }

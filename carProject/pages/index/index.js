@@ -149,5 +149,8 @@ Page({
     this.setData({
       [key]: safeValue
     })
+  },
+  getData(checked) {
+    console.log('checked.detail==>', checked.detail)
   }
 })

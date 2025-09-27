@@ -144,8 +144,20 @@
 
   <view class="line"></view>
 
-  <custom-checkbox label="匿名提交" position="left" class="my-class">
+  <custom-checkbox label="匿名提交" position="left" class="my-class" checked bind:changechecked="getData">
+
     匿名提交 - 222
   </custom-checkbox>
+
+
+  <custom-checkbox position="right" class="my-class">
+    匿名提交 - 222
+  </custom-checkbox>
+
+  <view class="custom">
+    <custom-checkbox position="right" class="my-class">
+      匿名提交 - 222
+    </custom-checkbox>
+  </view>
 
 </scroll-view>
