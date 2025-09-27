@@ -142,6 +142,10 @@
 
   <button type="warn" bindtap="fetchBanner">请求banner</button>
 
+  <view class="line"></view>
 
+  <custom-checkbox label="匿名提交" position="left" class="my-class">
+    匿名提交 - 222
+  </custom-checkbox>
 
 </scroll-view>
