@@ -2,6 +2,9 @@
 <view class="container">
   <input model:value="{{ value }}" />
   <checkbox model:checked="{{isChecked}}" />
-
-  <input type="text" model:value="{{ obj.value }}" />
+<!-- 微信小程序的双向绑定 model: 不支持复杂数据路径，如：
+❌ model:value="{{ obj.value }}" - 不支持
+❌ model:value="{{ list[0].name }}" - 不支持
+❌ model:value="{{ user.name }}" - 不支持 -->
+  <!-- <input type="text" model:value="{{ obj.value }}" /> -->
 </view>

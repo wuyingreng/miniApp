@@ -1,1 +1,16 @@
 /* pages/market/market.wxss */
+
+.item {
+  height: 400rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item:nth-child(odd) {
+  background-color: lightskyblue;
+}
+
+.item:nth-child(even) {
+  background-color: lightsalmon;
+}

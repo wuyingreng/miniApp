@@ -21,7 +21,8 @@ Page({
    */
   onLoad: function (options) {
     console.log('页面加载完毕')
-
+    // 页面加载时获取轮播图数据
+    this.fetchBanner()
   },
   /**
   * 生命周期函数--监听页面显示
@@ -77,9 +78,10 @@ Page({
   },
   fetchBanner() {
     wx.showLoading({
-      title: '加载中加载中加载中加载中加载中加载中加载中加载中',
+      title: '加载中...',
       mask: true
     })
+
     // 如果需要发起网络请求，需要使用 wx.request API
     wx.request({
       // 接口地址
@@ -92,26 +94,60 @@ Page({
       header: {},
       // API 调用成功以后，执行的回调
       success: (res) => {
-        // console.log(res)
-        if (res.data.code === 200) {
+        console.log('请求成功:', res)
+        // 确保 res.data 和 res.data.data 存在
+        if (res && res.data && res.data.code === 200 && res.data.data) {
+          // 确保 data 是数组
+          const data = Array.isArray(res.data.data) ? res.data.data : []
           this.setData({
-            list: res.data.data
+            list: data
+          })
+        } else {
+          console.error('数据格式错误:', res)
+          // 设置默认值
+          this.setData({
+            list: []
           })
         }
       },
       // API 调用失败以后，执行的回调
       fail: (err) => {
-        console.log(err)
+        console.error('请求失败:', err)
+        // 设置默认值
+        this.setData({
+          list: []
+        })
       },
       // API 不管调用成功还是失败以后，执行的回调
       complete: (res) => {
-        // console.log(res)
-
+        console.log('请求完成:', res)
         // 关掉 loading 提示框
-        // hideLoading 和 showLoading 必须结合、配对使用才可以
         wx.hideLoading()
       }
     })
+  },
+  setStorage() {
+    wx.setStorage({
+      key: 'num',
+      data: 1
+    });
 
+    console.log('data==>', wx.getStorage('num'))
+  },
+
+  // 数据验证方法
+  validateData(data) {
+    if (!data) return []
+    if (Array.isArray(data)) return data
+    if (typeof data === 'object' && data !== null) return [data]
+    return []
+  },
+
+  // 安全设置数据方法
+  safeSetData(key, value) {
+    const safeValue = this.validateData(value)
+    this.setData({
+      [key]: safeValue
+    })
   }
 })

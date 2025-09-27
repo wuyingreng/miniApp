@@ -13,6 +13,7 @@
         <!-- 如果用户没有传递 lable 属性，就展示 子节点内容 -->
         <text wx:if="{{ label !== '' }}">{{ label }}</text>
 
+<!-- 这里单词不要写错了。slot -->
         <slot wx:else />
       </view>
     </label>

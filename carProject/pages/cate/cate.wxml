@@ -9,7 +9,7 @@
 
   <view class="line"></view>
 
-  <!-- <view wx:for="{{ list }}" wx:key="index">{{ item }}</view> -->
+  <!-- <view wx:if="{{list && list.length > 0}}" wx:for="{{ list }}" wx:key="index">{{ item }}</view> -->
   <view wx:for="{{list}}" wx:key="index">{{ item }}</view>
   <!-- <view>{{ list[0].name }}</view> -->
 

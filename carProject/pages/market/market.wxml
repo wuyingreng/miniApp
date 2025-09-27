@@ -10,5 +10,5 @@
   <text hidden="{{num<=1}}">wx:hidden的用法</text>
   <button type="warn" bindtap="updateNum">点击更新num</button>
 
-
+  <view wx:for="{{numList}}" wx:key="*this" class="item">{{item}}</view>
 </view>

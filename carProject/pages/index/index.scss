@@ -154,3 +154,11 @@ page>view:nth-child(n + 2) {
   // background-image: url('../../assets/banner/banner-1.png');
   background-image: url('https://inews.gtimg.com/news_bt/OBkbmPLeWLy4IM4oUDGvOIqSDSZ9lYOtW3qSXCYh78KXcAA/1000');
 }
+
+.storageBtns {
+  display: flex;
+
+  >button {
+    margin: 3rpx;
+  }
+}

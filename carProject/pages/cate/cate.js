@@ -75,13 +75,17 @@ Page({
     // this.setData({ userInfo: newObj })
 
     // 删除
-    const { name, ...rest
-    } = this.data.userInfo
+    const { name, ...rest } = this.data.userInfo;
     this.setData({ userInfo: rest })
 
   },
   updateList() {
-    this.data.list.push(1)
-    this.setData({ list: this.data.list })
+    if (Array.isArray(this.data.list)) {
+      this.data.list.push(1)
+      this.setData({ list: this.data.list })
+    } else {
+      console.error('list 数据异常:', this.data.list)
+      this.setData({ list: [1] })
+    }
   }
 })
