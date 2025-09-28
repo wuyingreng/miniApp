@@ -10,5 +10,11 @@
     {{value}}-{{key}}
   </view>
 
+  <custom06 wx:if="{{num===1}}">
+    我是用来测试custom 6的
 
+  </custom06>
+  <button bindtap="handleCustom6" plain>销毁custom06</button>
+
+  <navigator url="/pages/detail/detail?id=10&title=测试">跳转到详情页面</navigator>
 </view>

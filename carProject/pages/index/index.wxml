@@ -144,7 +144,7 @@
 
   <view class="line"></view>
 
-  <custom-checkbox label="匿名提交" position="left" class="my-class" checked bind:changechecked="getData">
+  <custom-checkbox label="匿名提交" position="left" class="my-class" checked bind:changechecked="getData" class="custom">
 
     匿名提交 - 222
   </custom-checkbox>
@@ -159,5 +159,7 @@
       匿名提交 - 222
     </custom-checkbox>
   </view>
+
+  <button bindtap="getChildComponent" type="primary" plain>获取组件实例</button>
 
 </scroll-view>

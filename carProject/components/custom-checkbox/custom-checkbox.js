@@ -1,11 +1,16 @@
-// components/custom-checkbox/custom-checkbox.js
 Component({
+
   options: {
     styleIsolation: 'shared'
   },
+
+  // 如果 styleIsolation 属性值是 shared
+  // 这时候呢 externalClasses 选项会失效
+  externalClasses: ['xxxx'],
+
   /**
-  * 组件的属性列表：组件的对外属性，主要用来接收组件使用者传递给组件内部的属性以及数据
-  */
+   * 组件的属性列表：组件的对外属性，主要用来接收组件使用者传递给组件内部的属性以及数据
+   */
   properties: {
     // 如果需要接收传递的属性，有两种方式：全写、简写
     // label: String
@@ -17,6 +22,7 @@ Component({
       type: String,
       value: ''
     },
+
     position: {
       type: String,
       value: 'right'
@@ -40,57 +46,44 @@ Component({
   data: {
     isChecked: false
   },
+
   observers: {
+    // 如果需要将 properties 中的数据赋值给 data
+    // 可以使用 observers 进行处理
     checked: function (newChecked) {
+      // console.log(newChecked)
       this.setData({
         isChecked: newChecked
       })
     }
   },
 
-
-
-
   /**
    * 组件的方法列表：在组件中，所有的事件处理程序都需要写到 methods 方法中
    */
   methods: {
-    /**
-     * this.setData() 确实是异步的，这意味着：
-第59-61行的 this.setData() 调用后，this.data.isChecked 的值不会立即更新
-第62行的 this.triggerEvent() 中获取到的 this.data.isChecked 仍然是旧的值（更新前的值）
-     * 方案1：直接使用计算后的值（推荐）
-     *
-     *  updateChecked() {
-  const newChecked = !this.data.isChecked
-  this.setData({
-    isChecked: newChecked
-  })
-  this.triggerEvent('changechecked', newChecked)
-}
 
-方案2：使用 setData 的回调函数
-updateChecked() {
-  this.setData({
-    isChecked: !this.data.isChecked
-  }, () => {
-    // 在 setData 完成后的回调中触发事件
-    this.triggerEvent('changechecked', this.data.isChecked)
-  })
-}
-     * 
-    */
+    // 更新复选框的状态
     updateChecked() {
-      const newChecked = !this.data.isChecked;
+
       this.setData({
-        isChecked: newChecked
-      }, () => {
-        // 在 setData 完成后的回调中触发事件
-        this.triggerEvent('changechecked', this.data.isChecked)
+        isChecked: !this.data.isChecked,
+        // label: '在组件内部也可以修改 properties 中的数据'
       })
 
+      // 在 JS 中可以访问和获取 properties 中的数据
+      // 但是一般情况下，不建议修改，因为会造成数据流的混乱
+      // console.log(this.properties.label)
+      // console.log(this.data.isChecked)
+
+      // 目前复选框组件的状态是存储在复选框组件内部的、存储在自定义组件内部的
+      // 但是，在以后实际开发中，组件使用者、父组件有时候也需要获取到复选框内部的状态
+      // 怎么办 ？
+      // 这时候，自定义组件内部就需要发射一个自定义事件，
+      // 如果组件使用者、父组件需要使用数据，绑定自定义事件进行获取即可
+      this.triggerEvent('changechecked', this.data.isChecked)
     }
 
-
   }
+
 })

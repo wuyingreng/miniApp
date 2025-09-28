@@ -7,11 +7,17 @@
   align-items: center;
 }
 
-.custom-checkbox-box.left {
+.custom-checkbox-box .custom-label {
+  display: flex;
+  align-items: center;
+}
+
+.custom-checkbox-box.left .custom-label {
+
   flex-direction: row-reverse;
 }
 
-.custom-checkbox-box.right {
+.custom-checkbox-box.right .custom-label {
   flex-direction: row;
 }
 

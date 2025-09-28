@@ -152,5 +152,11 @@ Page({
   },
   getData(checked) {
     console.log('checked.detail==>', checked.detail)
+  },
+  getChildComponent() {
+
+    const child = this.selectComponent('.custom')
+    console.log(child)
+
   }
 })

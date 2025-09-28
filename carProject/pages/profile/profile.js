@@ -14,7 +14,8 @@ Page({
     obj: {
       name: 'Emily',
       age: 20
-    }
+    },
+    num: 1
 
   },
 
@@ -72,6 +73,11 @@ Page({
    */
   onShareAppMessage() {
 
+  },
+  handleCustom6() {
+    this.setData({
+      num: this.data.num + 1
+    })
   }
 })
 
