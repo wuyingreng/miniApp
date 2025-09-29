@@ -15,7 +15,6 @@
     "backgroundColor": "#efefef",
     "backgroundTextStyle": "dark"
   },
-  "style": "v2",
   "rendererOptions": {},
   "tabBar": {
     "selectedColor": "#f3514f",
@@ -53,6 +52,8 @@
   "sitemapLocation": "sitemap.json",
   "lazyCodeLoading": "requiredComponents",
   "usingComponents": {
-    "custom-checkbox": "./components/custom-checkbox/custom-checkbox"
+    "custom-checkbox": "./components/custom-checkbox/custom-checkbox",
+    "van-image": "@vant/weapp/image/index",
+    "van-loading": "@vant/weapp/loading/index"
   }
 }

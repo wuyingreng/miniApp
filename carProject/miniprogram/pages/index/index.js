@@ -158,5 +158,8 @@ Page({
     const child = this.selectComponent('.custom')
     console.log(child)
 
+  },
+  imageHandler() {
+    console.log('now click the images')
   }
 })

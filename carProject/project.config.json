@@ -1,11 +1,18 @@
 {
+  "miniprogramRoot": "./miniprogram",
   "setting": {
+    "packNpmManually": true,
+    "packNpmRelationList": [
+      {
+        "packageJsonPath": "./package.json",
+        "miniprogramNpmDistDir": "./miniprogram"
+      }
+    ],
     "es6": true,
     "postcss": true,
     "minified": false,
     "uglifyFileName": false,
     "enhance": true,
-    "packNpmRelationList": [],
     "babelSetting": {
       "ignore": [],
       "disablePlugins": [],
@@ -14,7 +21,6 @@
     "minifyWXML": true,
     "compileWorklet": false,
     "uploadWithSourceMap": true,
-    "packNpmManually": false,
     "minifyWXSS": true,
     "localPlugins": false,
     "disableUseStrict": false,
