@@ -3,3 +3,23 @@
   color: red;
   font-size: 24px;
 }
+
+// 页面里面的样式只是对这个页面生效，对其他页面不生效。
+.van-button--primary {
+  background-color: yellow !important;
+}
+
+/**
+*在 .my-button 类中定义了一个 CSS 变量 --color
+*变量值为 rgb(221, 152, 24)（橙黄色）
+*这个变量的作用域仅限于 .my-button 及其子元素
+**/
+.my-button {
+  --color: rgb(221, 152, 24);
+}
+
+.van-button--primary {
+  font-size: 28rpx !important;
+  background-color: var(__color) !important;
+  border: 1px solid var(--color) !important;
+}

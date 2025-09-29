@@ -4,9 +4,7 @@
     "pages/index/index",
     "pages/cate/cate",
     "pages/cart/cart",
-    "pages/profile/profile",
-    "pages/list/list",
-    "pages/detail/detail"
+    "pages/profile/profile"
   ],
   "window": {
     "navigationBarTitleText": "微信接口功能演示",
@@ -53,7 +51,41 @@
   "lazyCodeLoading": "requiredComponents",
   "usingComponents": {
     "custom-checkbox": "./components/custom-checkbox/custom-checkbox",
+    "custom01": "./components/custom01/custom01",
     "van-image": "@vant/weapp/image/index",
-    "van-loading": "@vant/weapp/loading/index"
+    "van-loading": "@vant/weapp/loading/index",
+    "van-button": "@vant/weapp/button/index"
+  },
+  "subPackages": [
+    {
+      "root": "modules/goodModule",
+      "name": "goodModule",
+      "pages": [
+        "pages/list/list",
+        "pages/detail/detail"
+      ]
+    },
+    {
+      "root": "modules/marketModule",
+      "name": "marketModule",
+      "pages": [
+        "pages/market/market"
+      ],
+      "independent": true
+    }
+  ],
+  "preloadRule": {
+    "pages/index/index": {
+      "network": "all",
+      "packages": [
+        "modules/goodModule"
+      ]
+    },
+    "modules/marketModule/pages/market/market": {
+      "network": "all",
+      "packages": [
+        "__APP__"
+      ]
+    }
   }
 }

@@ -3,7 +3,8 @@ Component({
 
   options: {
     // 启用多 slot 支持
-    multipleSlots: true
+    multipleSlots: true,
+    // styleIsolation: "shared"
   },
 
   /**

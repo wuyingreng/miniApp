@@ -1,4 +1,5 @@
 <!--index.wxml-->
+
 <scroll-view class="scrollarea" scroll-y type="list">
   <swiper class="swiper" indicator-dots indicator-active-color="#f3514f" indicator-color="#fff" circular autoplay="">
     <swiper-item>
@@ -11,7 +12,7 @@
       <image src="../../assets/banner/banner-3.png" mode="aspectFill" show-menu-by-longpress />
     </swiper-item>
   </swiper>
-
+<!-- 帮我添加如下代码，写一个Button -->
   <view class="info">
     <view class="info-item">
       <text class="iconfont icon-peisong"></text>
@@ -39,7 +40,7 @@
       </navigator>
     </view>
     <view>
-      <navigator url="/pages/list/list">
+      <navigator url="/modules/goodModule/pages/list/list">
         <image src="../../assets/category/cate-2.png" alt="" />
         <text>鲜花玫瑰</text>
       </navigator>
@@ -162,10 +163,12 @@
 
   <button bindtap="getChildComponent" type="primary" plain>获取组件实例</button>
 
-  <van-image width="100" height="100" src="/assets/bgimage2.png" fit="contain" use-loading-slot use-error-slot custom-class='image-container' round bind:click="imageHandler">
+  <van-image width="100" height="100" src="/assets/bgimage.png" fit="contain" use-loading-slot use-error-slot custom-class='image-container' round bind:click="imageHandler">
     <van-loading slot="loading" type="spinner" size="20" vertical />
     <text slot="error">加载失败</text>
 
   </van-image>
+
+  <custom01 />
 
 </scroll-view>

@@ -1,1 +1,4 @@
 /* components/custom01/custom01.wxss */
+.van-button--primary {
+  background-color: red;
+}
