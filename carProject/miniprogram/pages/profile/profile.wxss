@@ -1,1 +1,19 @@
 /* pages/profile/profile.wxss */
+
+.btn {
+  background-color: transparent;
+}
+
+.btn::after {
+  border: none;
+}
+
+.avatar {
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 50%;
+}
+
+.share {
+  margin: 32rpx;
+}

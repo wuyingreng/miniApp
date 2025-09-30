@@ -1,5 +1,4 @@
-<!--index.wxml-->
-
+<!-- index.wxml -->
 <scroll-view class="scrollarea" scroll-y type="list">
   <swiper class="swiper" indicator-dots indicator-active-color="#f3514f" indicator-color="#fff" circular autoplay="">
     <swiper-item>
@@ -12,7 +11,7 @@
       <image src="../../assets/banner/banner-3.png" mode="aspectFill" show-menu-by-longpress />
     </swiper-item>
   </swiper>
-<!-- 帮我添加如下代码，写一个Button -->
+  <!-- 帮我添加如下代码，写一个Button -->
   <view class="info">
     <view class="info-item">
       <text class="iconfont icon-peisong"></text>
@@ -31,7 +30,6 @@
       <text user-select space="ensp">好评如潮</text>
     </view>
   </view>
-
   <view class="navs">
     <view>
       <navigator url="/pages/list/list" redirect>
@@ -64,10 +62,8 @@
       </navigator>
     </view>
   </view>
-
   <view class="good-hot">
     <scroll-view scroll-x class="scroll-x">
-
       <view class="good-item">
         <!-- 前面要加/写根路径 -->
         <navigator url="/pages/market/market">
@@ -76,38 +72,26 @@
           <text>66</text>
         </navigator>
       </view>
-
-
-
       <view class="good-item">
         <image src="../../assets/floor/2.png" mode="" />
         <text>鲜花玫瑰</text>
         <text>77</text>
       </view>
-
-
-
       <view class="good-item">
         <image src="../../assets/floor/3.png" mode="" />
         <text>鲜花玫瑰</text>
         <text>88</text>
       </view>
-
-
       <view class="good-item">
         <image src="../../assets/floor/4.png" mode="" />
         <text>鲜花玫瑰</text>
         <text>99</text>
       </view>
-
-
-
       <view class="good-item">
         <image src="../../assets/floor/5.png" mode="" />
         <text>鲜花玫瑰</text>
         <text>100</text>
       </view>
-
     </scroll-view>
   </view>
   <view class="bg-image"></view>
@@ -117,12 +101,10 @@
   <view>{{ school }}</view>
   <view>{{obj.name}}</view>
   <!-- 绑定属性值，如果需要动态绑定一个变量，属性值也需要使用双大括号进行包裹 
-  这里和vue不一样，vue是i:id="id"
-  -->
+  这里和vue不一样，vue是i:id="id" -->
   <view id="{{ id }}">绑定属性值</view>
   <!-- 如果属性值是布尔值，也需要使用双大括号进行包裹 -->
   <checkbox checked="{{ isChecked }}" />
-
   <!-- 算术运算 -->
   <view>{{ id + 1 }}</view>
   <view>{{ id - 1 }}</view>
@@ -131,44 +113,25 @@
   <!-- 逻辑判断 -->
   <view>{{ id === 1 }}</view>
   <!-- 在双大括号写法内部，只能写表达式，不能写语句，也不能调用 js 的方法
-    表达式是得到一个值，语句是执行某些操作
-  
-   -->
+    表达式是得到一个值，语句是执行某些操作 -->
   <!-- <view>{{ if (id === 1) {} }}</view> -->
   <!-- <view>{{ for (const i = 0; i <= 10; i++) {} }}</view> -->
-  <view>{{ obj.name.toUpperCase() }}</view>
-
+  <view>{{ obj && obj.name }}</view>
   <view class="line"></view>
-  下面进行数据请求
-
+  <view>下面进行数据请求</view>
   <button type="warn" bindtap="fetchBanner">请求banner</button>
-
   <view class="line"></view>
-
   <custom-checkbox label="匿名提交" position="left" class="my-class" checked bind:changechecked="getData" class="custom">
-
     匿名提交 - 222
   </custom-checkbox>
-
-
-  <custom-checkbox position="right" class="my-class">
-    匿名提交 - 222
-  </custom-checkbox>
-
+  <custom-checkbox position="right" class="my-class">匿名提交 - 222</custom-checkbox>
   <view class="custom">
-    <custom-checkbox position="right" class="my-class">
-      匿名提交 - 222
-    </custom-checkbox>
+    <custom-checkbox position="right" class="my-class">匿名提交 - 222</custom-checkbox>
   </view>
-
   <button bindtap="getChildComponent" type="primary" plain>获取组件实例</button>
-
   <van-image width="100" height="100" src="/assets/bgimage.png" fit="contain" use-loading-slot use-error-slot custom-class='image-container' round bind:click="imageHandler">
     <van-loading slot="loading" type="spinner" size="20" vertical />
     <text slot="error">加载失败</text>
-
   </van-image>
-
   <custom01 />
-
 </scroll-view>

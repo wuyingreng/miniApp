@@ -1,4 +1,4 @@
-// modules/goodModule/pages/list/list.js
+// pages/list/list.js
 Page({
 
   /**
@@ -12,6 +12,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
+    console.log('options 查看其他页面传递过来的参数==>', options)
 
   },
 

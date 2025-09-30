@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>表单示例 - name 属性解释</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f5f5f5;
+    }
+
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      color: #333;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .section {
+      margin-bottom: 40px;
+      padding: 20px;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      background-color: #fafafa;
+    }
+
+    .section h2 {
+      color: #2c3e50;
+      margin-top: 0;
+      border-bottom: 2px solid #3498db;
+      padding-bottom: 10px;
+    }
+
+    form {
+      margin: 20px 0;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+      color: #555;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ddd;
+      border-radius: 6px;
+      font-size: 16px;
+      box-sizing: border-box;
+      transition: border-color 0.3s;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      outline: none;
+      border-color: #3498db;
+    }
+
+    button {
+      background-color: #3498db;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-right: 10px;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #2980b9;
+    }
+
+    .result {
+      background-color: #2ecc71;
+      color: white;
+      padding: 15px;
+      border-radius: 6px;
+      margin-top: 20px;
+      display: none;
+    }
+
+    .error {
+      background-color: #e74c3c;
+    }
+
+    .code-block {
+      background-color: #2c3e50;
+      color: #ecf0f1;
+      padding: 15px;
+      border-radius: 6px;
+      font-family: 'Courier New', monospace;
+      overflow-x: auto;
+      margin: 10px 0;
+    }
+
+    .highlight {
+      background-color: #f39c12;
+      color: #2c3e50;
+      padding: 2px 4px;
+      border-radius: 3px;
+      font-weight: bold;
+    }
+
+    .explanation {
+      background-color: #ecf0f1;
+      padding: 15px;
+      border-left: 4px solid #3498db;
+      margin: 15px 0;
+    }
+
+    .warning {
+      background-color: #fff3cd;
+      border: 1px solid #ffeaa7;
+      color: #856404;
+      padding: 15px;
+      border-radius: 6px;
+      margin: 15px 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>表单 name 属性详解</h1>
+
+    <!-- 基础示例 -->
+    <div class="section">
+      <h2>1. 基础示例 - 为什么需要 name 属性</h2>
+
+      <div class="explanation">
+        <strong>name 属性的作用：</strong>
+        <ul>
+          <li>标识表单字段，用于数据收集</li>
+          <li>表单提交时，只有带 name 属性的字段才会被收集</li>
+          <li>后端可以通过 name 属性识别前端传来的数据</li>
+        </ul>
+      </div>
+
+      <form id="basicForm">
+        <div class="form-group">
+          <label for="nickname">昵称（有 name 属性）：</label>
+          <input type="text" id="nickname" name="nickname" placeholder="请输入昵称" />
+        </div>
+
+        <div class="form-group">
+          <label for="email">邮箱（有 name 属性）：</label>
+          <input type="email" id="email" name="email" placeholder="请输入邮箱" />
+        </div>
+
+        <div class="form-group">
+          <label for="noName">无 name 属性（不会被收集）：</label>
+          <input type="text" id="noName" placeholder="这个输入框没有 name 属性" />
+        </div>
+
+        <button type="submit">提交表单</button>
+      </form>
+
+      <div id="basicResult" class="result"></div>
+    </div>
+
+    <!-- 微信小程序示例 -->
+    <div class="section">
+      <h2>2. 微信小程序中的 name 属性</h2>
+
+      <div class="code-block">
+        &lt;form bindsubmit="onSubmit"&gt;
+        &lt;input type="nickname" <span class="highlight">name="nickname"</span> placeholder="请输入昵称" /&gt;
+        &lt;input type="text" <span class="highlight">name="username"</span> placeholder="请输入用户名" /&gt;
+        &lt;button form-type="submit"&gt;提交&lt;/button&gt;
+        &lt;/form&gt;
+      </div>
+
+      <div class="code-block">
+        // JavaScript 中获取数据
+        onSubmit(e) {
+        const formData = e.detail.value
+        console.log(formData.nickname) // 获取昵称
+        console.log(formData.username) // 获取用户名
+        }
+      </div>
+
+      <div class="warning">
+        <strong>注意：</strong>在微信小程序中，type="nickname" 是特殊类型，会调起微信的昵称输入键盘，但仍然需要 name 属性来标识数据。
+      </div>
+    </div>
+
+    <!-- 对比示例 -->
+    <div class="section">
+      <h2>3. 有 name 属性 vs 无 name 属性对比</h2>
+
+      <form id="compareForm">
+        <div class="form-group">
+          <label>有 name 属性的输入框：</label>
+          <input type="text" name="withName" placeholder="这个有 name 属性" />
+        </div>
+
+        <div class="form-group">
+          <label>无 name 属性的输入框：</label>
+          <input type="text" placeholder="这个没有 name 属性" />
+        </div>
+
+        <button type="submit">查看收集的数据</button>
+      </form>
+
+      <div id="compareResult" class="result"></div>
+    </div>
+
+    <!-- 实际应用示例 -->
+    <div class="section">
+      <h2>4. 实际应用示例</h2>
+
+      <form id="practicalForm">
+        <div class="form-group">
+          <label for="firstName">姓：</label>
+          <input type="text" id="firstName" name="firstName" placeholder="请输入姓" />
+        </div>
+
+        <div class="form-group">
+          <label for="lastName">名：</label>
+          <input type="text" id="lastName" name="lastName" placeholder="请输入名" />
+        </div>
+
+        <div class="form-group">
+          <label for="age">年龄：</label>
+          <input type="number" id="age" name="age" placeholder="请输入年龄" />
+        </div>
+
+        <div class="form-group">
+          <label for="gender">性别：</label>
+          <select id="gender" name="gender">
+            <option value="">请选择性别</option>
+            <option value="male">男</option>
+            <option value="female">女</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="bio">个人简介：</label>
+          <textarea id="bio" name="bio" placeholder="请输入个人简介" rows="4"></textarea>
+        </div>
+
+        <button type="submit">提交用户信息</button>
+      </form>
+
+      <div id="practicalResult" class="result"></div>
+    </div>
+
+    <!-- 最佳实践 -->
+    <div class="section">
+      <h2>5. 最佳实践</h2>
+
+      <div class="explanation">
+        <h3>命名规范：</h3>
+        <ul>
+          <li><strong>语义化命名：</strong>使用有意义的 name 属性，如 name="email" 而不是 name="field1"</li>
+          <li><strong>一致性：</strong>保持命名风格一致，如使用驼峰命名法或下划线命名法</li>
+          <li><strong>简洁明了：</strong>name 属性应该简洁但能清楚表达字段用途</li>
+        </ul>
+      </div>
+
+      <div class="code-block">
+        // 推荐：语义化的 name
+        &lt;input type="text" name="username" /&gt;
+        &lt;input type="email" name="email" /&gt;
+        &lt;input type="password" name="password" /&gt;
+
+        // 避免：无意义的 name
+        &lt;input type="text" name="input1" /&gt;
+        &lt;input type="email" name="field2" /&gt;
+        &lt;input type="password" name="data3" /&gt;
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // 基础表单处理
+    document.getElementById('basicForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const formData = new FormData(this);
+      const data = Object.fromEntries(formData);
+      console.log('e==>', e, this)
+      const resultDiv = document.getElementById('basicResult');
+      resultDiv.style.display = 'block';
+      resultDiv.innerHTML = `
+                <h3>收集到的数据：</h3>
+                <pre>${JSON.stringify(data, null, 2)}</pre>
+                <p><strong>注意：</strong>只有带 name 属性的字段才会被收集到数据中！</p>
+            `;
+    });
+
+    // 对比表单处理
+    document.getElementById('compareForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const formData = new FormData(this);
+      const data = Object.fromEntries(formData);
+
+      const resultDiv = document.getElementById('compareResult');
+      resultDiv.style.display = 'block';
+      resultDiv.innerHTML = `
+                <h3>收集到的数据：</h3>
+                <pre>${JSON.stringify(data, null, 2)}</pre>
+                <p><strong>结果：</strong>只有 "withName" 字段被收集，没有 name 属性的字段被忽略了！</p>
+            `;
+    });
+
+    // 实际应用表单处理
+    document.getElementById('practicalForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const formData = new FormData(this);
+      const data = Object.fromEntries(formData);
+
+      const resultDiv = document.getElementById('practicalResult');
+      resultDiv.style.display = 'block';
+      resultDiv.innerHTML = `
+                <h3>用户信息：</h3>
+                <div style="text-align: left;">
+                    <p><strong>姓名：</strong>${data.firstName} ${data.lastName}</p>
+                    <p><strong>年龄：</strong>${data.age}</p>
+                    <p><strong>性别：</strong>${data.gender === 'male' ? '男' : data.gender === 'female' ? '女' : '未选择'}</p>
+                    <p><strong>个人简介：</strong>${data.bio || '无'}</p>
+                </div>
+                <h4>原始数据：</h4>
+                <pre>${JSON.stringify(data, null, 2)}</pre>
+            `;
+    });
+  </script>
+</body>
+
+</html>

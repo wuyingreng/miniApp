@@ -98,7 +98,9 @@ Page({
         // 确保 res.data 和 res.data.data 存在
         if (res && res.data && res.data.code === 200 && res.data.data) {
           // 确保 data 是数组
-          const data = Array.isArray(res.data.data) ? res.data.data : []
+
+          const data = Array.isArray(res.data.data) ? res.data.data : [];
+          console.log('data==>', data, 'this', this)
           this.setData({
             list: data
           })

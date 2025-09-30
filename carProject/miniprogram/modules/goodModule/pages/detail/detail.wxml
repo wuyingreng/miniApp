@@ -1,2 +1,4 @@
-<!--modules/goodModule/pages/detail/detail.wxml-->
-<text>modules/goodModule/pages/detail/detail.wxml</text>
+
+<view>{{ name }}</view>
+
+<button type="warn" plain bindtap="updateName">更新 name</button>
