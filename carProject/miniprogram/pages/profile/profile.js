@@ -24,7 +24,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    wx.showShareMenu({
+      withShareTicket: true,
+      menus: ['shareAppMessage', 'shareTimeline']
+    })
   },
 
   /**
@@ -110,6 +113,7 @@ Page({
     }
 
   },
+  // 监听右上角 分享到朋友圈 按钮
   onShareTimeline() {
     return {
       // 自定义标题，即朋友圈列表页上显示的标题
@@ -117,7 +121,7 @@ Page({
       // 自定义页面路径中携带的参数，如 path?a=1&b=2 的 【 “?” 后面部分 】
       query: 'id=1',
       // 自定义图片路径，可以是本地文件或者网络图片
-      imageUrl: '../../assets/Jerry.png'
+      imageUrl: '/assets/Jerry.png'
     }
   }
 })

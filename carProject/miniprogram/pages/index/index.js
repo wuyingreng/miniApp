@@ -77,15 +77,15 @@ Page({
 
   },
   fetchBanner() {
-    wx.showLoading({
-      title: '加载中...',
-      mask: true
-    })
+    // wx.showLoading({
+    //   title: '加载中...',
+    //   mask: true
+    // })
 
     // 如果需要发起网络请求，需要使用 wx.request API
     wx.request({
       // 接口地址
-      url: 'https://gmall-prod.atguigu.cn/mall-api/index/findBanner',
+      url: 'https://x.sujianbin.com/?name=list.json',
       // 请求方式
       method: 'GET',
       // 请求参数
