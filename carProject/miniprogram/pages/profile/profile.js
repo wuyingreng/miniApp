@@ -69,12 +69,8 @@ Page({
 
   },
 
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
 
-  },
+
   handleCustom6() {
     this.setData({
       num: this.data.num + 1
@@ -96,6 +92,9 @@ Page({
     const { nickname } = event.detail.value
     console.log(nickname)
   },
+  /**
+   * 用户点击右上角分享
+   */
   // 监听页面按钮的转发 以及 右上角的转发按钮。这个函数的名称是固定的
   onShareAppMessage(obj) {
     console.log(obj)
@@ -110,6 +109,16 @@ Page({
       imageUrl: '../../assets/Jerry.png'
     }
 
+  },
+  onShareTimeline() {
+    return {
+      // 自定义标题，即朋友圈列表页上显示的标题
+      title: '帮我砍一刀~~~',
+      // 自定义页面路径中携带的参数，如 path?a=1&b=2 的 【 “?” 后面部分 】
+      query: 'id=1',
+      // 自定义图片路径，可以是本地文件或者网络图片
+      imageUrl: '../../assets/Jerry.png'
+    }
   }
 })
 

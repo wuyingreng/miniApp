@@ -66,7 +66,22 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage() {
+    return {
+      title: '分享给朋友',
+      path: '/pages/cate/cate',
+      imageUrl: '/assets/Jerry.png'
+    }
+  },
 
+  onShareTimeline() {
+    return {
+      // 自定义标题，即朋友圈列表页上显示的标题
+      title: '帮我砍一刀~~~',
+      // 自定义页面路径中携带的参数，如 path?a=1&b=2 的 【 "?" 后面部分 】
+      query: 'id=1',
+      // 自定义图片路径，可以是本地文件或者网络图片
+      imageUrl: '/assets/Jerry.png'
+    }
   },
   changeObj() {
     // 新增
@@ -80,12 +95,9 @@ Page({
 
   },
   updateList() {
-    if (Array.isArray(this.data.list)) {
-      this.data.list.push(1)
-      this.setData({ list: this.data.list })
-    } else {
-      console.error('list 数据异常:', this.data.list)
-      this.setData({ list: [1] })
-    }
+    // 确保 list 是数组
+    const currentList = Array.isArray(this.data.list) ? this.data.list : []
+    currentList.push(1)
+    this.setData({ list: currentList })
   }
 })
