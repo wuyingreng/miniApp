@@ -163,5 +163,23 @@ Page({
   },
   imageHandler() {
     console.log('now click the images')
+  },
+  goList() {
+    wx.navigateTo({
+      url: '/modules/goodModule/pages/list/list',
+      events: {
+        // 监听地址选择事件
+        'addressSelected': (data) => {
+          console.log('用户选择的地址:', data)
+          this.setData({ selectedAddress: data })
+        }
+      },
+      success(res) {
+        console.log(res)
+        // 通过 success 回调函数的形参，可以获取 eventChannel 对象
+        // eventChannel 对象给提供了 emit 方法，可以发射事件，同时携带参数
+        res.eventChannel.emit('askAddress', { region: 'jiangxi' })
+      }
+    })
   }
 })

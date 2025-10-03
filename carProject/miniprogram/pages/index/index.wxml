@@ -32,7 +32,7 @@
   </view>
   <view class="navs">
     <view>
-      <navigator url="/pages/list/list" redirect>
+      <navigator url="/modules/goodModule/pages/list/list" redirect>
         <image src="../../assets/category/cate-2.png" />
         <text>进入list页面</text>
       </navigator>
@@ -134,4 +134,5 @@
     <text slot="error">加载失败</text>
   </van-image>
   <custom01 />
+  <button type="warn" bindtap="goList">跳转进入list页面</button>
 </scroll-view>

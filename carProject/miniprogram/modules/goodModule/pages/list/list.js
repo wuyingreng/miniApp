@@ -14,6 +14,23 @@ Page({
   onLoad(options) {
     console.log('options 查看其他页面传递过来的参数==>', options)
 
+    // 通过 this.getOpenerEventChannel() 可以获取 EventChannel 对象
+    const eventChannel = this.getOpenerEventChannel()
+
+    /**
+     * 通过 EventChannel 提供的 on 方法监听页面发射的自定义事件
+     * 得用箭头函数
+     * */
+
+
+    eventChannel?.on('askAddress', (res) => {
+      console.log('askAddress==>', res)
+      this.setData({
+        region: res.region
+      })
+    })
+
+
   },
 
   /**
@@ -62,6 +79,19 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage() {
+
+  },
+  backIndex() {
+    const EventChannel = this.getOpenerEventChannel()
+    // 通过 EventChannel 提供的 emit 方法也可以向上一级页面传递数据
+    // 需要使用 emit 定义自定义事件，携带需要传递的数据
+
+    if (this.data.region === 'jiangxi') {
+      EventChannel.emit('addressSelected', { city: 'yingtan' })
+    }
+
+    wx.navigateBack()
+
 
   }
 })

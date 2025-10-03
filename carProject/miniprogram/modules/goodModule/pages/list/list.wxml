@@ -1,2 +1,6 @@
 <!--pages/list/list.wxml-->
-<text>pages/list/list.wxml</text>
+<view>
+
+
+  <button type="warn" plain bindtap="backIndex">调回index页面</button>
+</view>

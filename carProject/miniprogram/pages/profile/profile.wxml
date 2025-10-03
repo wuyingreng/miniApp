@@ -1,6 +1,6 @@
 <!--pages/profile/profile.wxml-->
 <view>
-  <view wx:for="{{fruitList}}" wx:key="id" wx:for-item="fruitItem">
+  <!-- <view wx:for="{{fruitList}}" wx:key="id" wx:for-item="fruitItem">
 
     {{fruitItem.name}}-{{fruitItem.price}}
   </view>
@@ -8,12 +8,13 @@
   <view wx:for="{{obj}}" wx:key="id" wx:for-item="value" wx:for-index="key">
 
     {{value}}-{{key}}
-  </view>
+  </view> -->
 
   <custom06 wx:if="{{num===1}}">
     我是用来测试custom 6的
 
   </custom06>
+  <text>{{num}}</text>
   <button bindtap="handleCustom6" plain>销毁custom06</button>
 
   <navigator url="/modules/goodModule/pages/detail/detail?id=10&title=测试">跳转到详情页面</navigator>
@@ -41,4 +42,14 @@
   <button open-type="share" class="share">转发</button>
 
 
+  <view class="line"></view>
+
+  <button type="primary" plain open-type="getPhoneNumber" bindgetphonenumber="getphonenumber">快速验证组件</button>
+
+  <view class="line"></view>
+
+  <button type="warn" plain open-type="getRealtimePhoneNumber" bindgetrealtimephonenumber="getrealtimephonenumber">实时验证组件</button>
+
+  <view class="line"></view>
+  <button type="warn" open-type="contact">客服功能</button>
 </view>
