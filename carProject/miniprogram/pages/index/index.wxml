@@ -66,7 +66,7 @@
     <scroll-view scroll-x class="scroll-x">
       <view class="good-item">
         <!-- 前面要加/写根路径 -->
-        <navigator url="/pages/market/market">
+        <navigator url="/modules/marketModule/pages/market/market">
           <image src="../../assets/floor/1.png" mode="" />
           <text>进入market页面</text>
           <text>66</text>

@@ -22,14 +22,17 @@ Page({
      * 得用箭头函数
      * */
 
+    console.log('eventChannel==>', eventChannel)
+    if (eventChannel?.on) {
 
-    eventChannel?.on('askAddress', (res) => {
-      console.log('askAddress==>', res)
-      this.setData({
-        region: res.region
+
+      eventChannel?.on('askAddress', (res) => {
+        console.log('askAddress==>', res, 'this==>', this)
+        this.setData({
+          region: res.region
+        })
       })
-    })
-
+    }
 
   },
 
